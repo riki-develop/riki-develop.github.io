@@ -248,6 +248,8 @@ a {
 	padding: 5px 20px 5px 0;
 }
 .brand_txt {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
 	font-size: 1.2rem;
 	padding: 20px 20px 20px 0;
 	word-wrap: break-word;
@@ -420,8 +422,9 @@ a {
 		position: relative;
 	}
 	.header_ttl {
-		font-size: 2.3rem;
-		left: 0px;
+		font-size: 2.1rem;
+		left: 0;
+		top: 0;
 	}
 	.header_nav_wrap {
 		position: absolute;
@@ -450,8 +453,8 @@ a {
 		-webkit-border-radius: 6px;
 		background: #fff;
 		margin: 0 auto 35px;
-		min-width: 490px;
-		width: 98%;
+		min-width: 300px;
+		width: 99%;
 	}
 	.view_list_wrap > li {
 		margin-bottom: 25px;
