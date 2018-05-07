@@ -415,18 +415,19 @@ a {
 	.header_wrap {
 		background-position: inherit;
 		margin: 0 0 35px 0;
-		min-width: 490px;
-		height: 400px;
+		min-width: 300px;
+		height: 310px;
 		position: relative;
 	}
 	.header_ttl {
 		font-size: 2.3rem;
+		left: 0px;
 	}
 	.header_nav_wrap {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		width: 100%;
+		width: 99%;
 	}
 	.header_nav_wrap > li {
 		display: block;
@@ -436,8 +437,9 @@ a {
 	.header_nav_wrap > li a {
 		border-left: 2px solid #000;
 		border-radius: 0;
-		font-size: 0.8rem;
-		padding: 20px 0;
+		font-size: 0.6rem;
+		height: 13px;
+		padding: 15px 0;
 		width: 100%;
 	}
 
