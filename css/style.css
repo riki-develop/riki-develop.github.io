@@ -97,7 +97,7 @@ a {
 }
 .top_btn-wrap > p {
 	position: fixed;
-	bottom: 10px;
+	bottom: 15px;
 	right: 10px;
 }
 .top-btn {
@@ -460,7 +460,7 @@ a {
 	}
 	.view_list_wrap > li {
 		margin-bottom: 25px;
-		height: 228px;
+		height: 185px;
 		width: 33.33%;
 	}
 
