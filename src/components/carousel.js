@@ -1,14 +1,17 @@
-// Carousel Module - Simple slideshow without bxSlider
 export const carousel = () => {
   const carouselList = document.querySelector('.carousel__list');
   if (!carouselList) return;
 
   const slides = carouselList.querySelectorAll('li');
+  if (slides.length <= 1) return;
+
   let currentSlide = 0;
+  let intervalId;
 
   const showSlide = (index) => {
     slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
+      slide.classList.toggle('is-active', i === index);
+      slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
     });
   };
 
@@ -17,9 +20,19 @@ export const carousel = () => {
     showSlide(currentSlide);
   };
 
-  // Initialize
-  showSlide(0);
+  const startAutoplay = () => {
+    intervalId = window.setInterval(nextSlide, 6000);
+  };
 
-  // Auto rotate every 4 seconds with 2 second transition
-  setInterval(nextSlide, 6000);
+  const stopAutoplay = () => {
+    if (!intervalId) return;
+    window.clearInterval(intervalId);
+    intervalId = undefined;
+  };
+
+  showSlide(0);
+  startAutoplay();
+
+  carouselList.addEventListener('mouseenter', stopAutoplay);
+  carouselList.addEventListener('mouseleave', startAutoplay);
 };

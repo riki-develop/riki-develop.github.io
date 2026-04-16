@@ -1,16 +1,21 @@
-// Shop List Accordion Module
 export const shopAccordion = () => {
   const shopListTitles = document.querySelectorAll('.shop__list-title');
 
-  shopListTitles.forEach(title => {
+  shopListTitles.forEach((title) => {
+    const target = title.getAttribute('data-target');
+    const shopList = target ? document.getElementById(target) : null;
+    if (!shopList) return;
+
+    shopList.hidden = true;
+    title.setAttribute('aria-expanded', 'false');
+    title.setAttribute('aria-controls', shopList.id);
+
     title.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = title.getAttribute('data-target');
-      const shopList = document.getElementById(target);
 
-      if (shopList) {
-        shopList.style.display = shopList.style.display === 'none' ? 'block' : 'none';
-      }
+      const isOpen = !shopList.hidden;
+      shopList.hidden = isOpen;
+      title.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     });
   });
 };

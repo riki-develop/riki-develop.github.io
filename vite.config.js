@@ -1,6 +1,11 @@
+import { webcrypto } from 'node:crypto'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import sass from 'sass'
+
+if (!globalThis.crypto) {
+  globalThis.crypto = webcrypto
+}
 
 export default defineConfig({
   root: 'src',

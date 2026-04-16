@@ -86,7 +86,7 @@ iframe {
 // ===========================
 .header {
   &__wrap {
-    background-image: url('/banner.jpg');
+    background-image: url('/images/banner.jpg');
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100%;
@@ -261,13 +261,24 @@ iframe {
   &__list {
     margin: 0;
     padding: 0;
+    position: relative;
 
     a {
       display: block;
     }
 
+    li {
+      display: none;
+    }
+
+    .is-active {
+      display: block;
+    }
+
     img {
       margin: 0 auto;
+      display: block;
+      width: 100%;
       height: auto;
     }
 
@@ -351,7 +362,9 @@ iframe {
   }
 
   &__list-hide {
-    display: none;
+    &[hidden] {
+      display: none;
+    }
   }
 }
 
@@ -544,7 +557,9 @@ iframe {
   }
 
   &__list {
-    display: none;
+    &[hidden] {
+      display: none;
+    }
 
     a {
       display: block;
