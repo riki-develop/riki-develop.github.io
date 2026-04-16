@@ -1,14 +1,15 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import sass from 'sass'
 
 export default defineConfig({
-  root: '.',
-  publicDir: 'public',
+  root: 'src',
+  publicDir: '../public',
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: './index.html'
+      input: resolve(__dirname, 'src/index.html')
     }
   },
   server: {
