@@ -1,18 +1,13 @@
-import { webcrypto } from 'node:crypto'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import sass from 'sass'
-
-if (!globalThis.crypto) {
-  globalThis.crypto = webcrypto
-}
 
 export default defineConfig({
   root: 'src',
   publicDir: '../public',
   build: {
-    outDir: '../dist',
-    emptyOutDir: true,
+    outDir: '..',
+    emptyOutDir: false,
     rollupOptions: {
       input: resolve(__dirname, 'src/index.html')
     }
